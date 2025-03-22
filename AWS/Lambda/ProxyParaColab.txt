@@ -1,0 +1,47 @@
+import https from 'https';
+
+export const handler = async (event) => {
+    const requestBody = JSON.parse(event.body);
+
+    const options = {
+        hostname: 'SEU-ENDPOINT-NGROK-AQUI.ngrok-free.app',
+        path: '/api/generate',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    };
+
+    return new Promise((resolve, reject) => {
+        const req = https.request(options, (res) => {
+            let data = '';
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+            res.on('end', () => {
+                resolve({
+                    statusCode: res.statusCode,
+                    body: data,
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/json'
+                    }
+                });
+            });
+        });
+
+        req.on('error', (error) => {
+            reject({
+                statusCode: 500,
+                body: JSON.stringify({ error: error.message }),
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json'
+                }
+            });
+        });
+
+        req.write(JSON.stringify(requestBody));
+        req.end();
+    });
+};
