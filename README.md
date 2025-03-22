@@ -1,6 +1,3 @@
-Aqui está o texto completo revisado, formatado para um arquivo `README.md`:
-
-```markdown
 # 📌 Project Documentation
 
 ## 📝 Overview
