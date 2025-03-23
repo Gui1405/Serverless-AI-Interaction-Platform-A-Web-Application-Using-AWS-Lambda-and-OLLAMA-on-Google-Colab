@@ -98,17 +98,17 @@ To run this project, you will need the following resources:
 ```
 /your-repository
 ├── AWS
-│   ├── Lambda
-│   │   ├── ProxyParaColab.txt
-│   └── S3
-│       ├── index.html
+│ ├── Lambda
+│ │ └── ProxyParaColab.txt
+│ └── S3
+│ ├── index.html
+│ ├── style
+│ │ └── style.css
+│ └── script
+│ └── script.js
 ├── Google Colab
-│   ├── ollama_server.ipynb
-├── style
-│   ├── style.css
-├── script
-│   ├── script.js
-├── README.md
+│ └── ollama_server.ipynb
+└── README.md
 ```
 
 ---
