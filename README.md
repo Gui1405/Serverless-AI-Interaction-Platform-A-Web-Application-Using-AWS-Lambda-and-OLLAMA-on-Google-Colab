@@ -1,0 +1,2 @@
+# Serverless-AI-Interaction-Platform-A-Web-Application-Using-AWS-Lambda-and-OLLAMA-on-Google-Colab
+This project demonstrates the use of various technologies within the Free Tier. It features an interactive web app where users interact with an AI model running on OLLAMA, an open-source tool on Google Colab. The backend utilizes AWS Lambda and API Gateway, while the frontend is hosted on Amazon S3, offering a scalable, cost-effective solution.
